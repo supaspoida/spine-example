@@ -6,6 +6,7 @@ gem 'decent_exposure'
 gem 'haml-rails'
 gem 'informal'
 gem 'jquery-rails'
+gem 'redis'
 
 group :assets do
   gem 'sass-rails',   '~> 3.1.5'
