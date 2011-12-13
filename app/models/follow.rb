@@ -13,9 +13,21 @@ class Follow
     end
   end
 
+  def destroy
+    Persistence::Redis::Follow.destroy(id)
+  end
+
+  def to_param
+    id
+  end
+
   def save
     Persistence::Redis::Follow.create(id)
     valid?
+  end
+
+  def persisted?
+    id.present? && Persistence::Redis::Follow.exists?(id)
   end
 
 end

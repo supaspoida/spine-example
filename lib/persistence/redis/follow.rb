@@ -11,6 +11,14 @@ module Persistence
         redis.sadd(key, person)
       end
 
+      def self.destroy(person)
+        redis.srem(key, person)
+      end
+
+      def self.exists?(person)
+        redis.sismember(key, person)
+      end
+
       def self.key
         'follows'
       end
