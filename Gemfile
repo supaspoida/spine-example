@@ -2,6 +2,7 @@ source :rubygems
 
 gem 'rails', '3.1.3'
 
+gem 'decent_exposure'
 gem 'haml-rails'
 
 group :assets do
