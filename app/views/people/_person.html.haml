@@ -1,4 +1,6 @@
 %li.person
   = person.name
   %span.follow
-    = link_to 'Follow', '#'
+    = form_for follow do |f|
+      = f.hidden_field :person, value: person.name
+      = f.submit 'Follow'
