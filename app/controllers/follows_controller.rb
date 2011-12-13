@@ -1,5 +1,5 @@
 class FollowsController < ApplicationController
-  expose(:follow) { Follow.new(params[:follow]) }
+  expose(:follow) { Follow.new(id: params[:id]) }
 
   respond_to :html
 

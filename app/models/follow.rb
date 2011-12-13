@@ -1,7 +1,7 @@
 class Follow
   include Informal::Model
 
-  attr_accessor :person
+  attr_accessor :id
 
   def self.people
     all.map { |f| Person.new(name: f.name) }
@@ -14,7 +14,7 @@ class Follow
   end
 
   def save
-    Persistence::Redis::Follow.create(person)
+    Persistence::Redis::Follow.create(id)
     valid?
   end
 

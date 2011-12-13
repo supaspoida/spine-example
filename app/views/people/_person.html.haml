@@ -2,5 +2,5 @@
   = person.name
   %span.follow
     = form_for follow do |f|
-      = f.hidden_field :person, value: person.name
+      = f.hidden_field :id, value: person.name
       = f.submit 'Follow'
