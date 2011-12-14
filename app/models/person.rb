@@ -14,7 +14,7 @@ class Person
   end
 
   def as_json(*args)
-    { id: name, name: name }
+    { id: name, name: name, already_followed: followed? }
   end
 
   def follow
