@@ -13,6 +13,10 @@ class Person
     PEOPLE.map(&method(:new)).sort_by(&:name)
   end
 
+  def as_json(*args)
+    { id: name, name: name }
+  end
+
   def follow
     Follow.new(id: name)
   end
