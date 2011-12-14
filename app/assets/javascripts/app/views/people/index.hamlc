@@ -1,0 +1,5 @@
+- for person in @people
+  %li.unfollow.person{data: {id: person.id}}
+    = person.name
+    %a.unfollow{href: "#", data: {type: 'unfollow'}} Unfollow
+    %a.follow{href: "#", data: {type: 'follow'}} Follow

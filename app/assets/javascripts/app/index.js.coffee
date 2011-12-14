@@ -15,9 +15,7 @@ class App extends Spine.Controller
   constructor: ->
     super
 
-    # Initialize controllers:
-    #  @append(@items = new App.Items)
-    #  ...
+    @people = new App.People
 
     Spine.Route.setup()
 
