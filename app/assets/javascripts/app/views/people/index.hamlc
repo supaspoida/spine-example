@@ -1,0 +1,8 @@
+- if @people.length
+  - for person in @people
+    %li.person{class: person.selector(), data: {id: person.id}}
+      = person.name
+      %a.unfollow{href: "#", data: {type: 'unfollow'}} Unfollow
+      %a.follow{href: "#", data: {type: 'follow'}} Follow
+- else
+  %li Not following anyone
