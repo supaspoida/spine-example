@@ -11,6 +11,11 @@
 #= require_tree ./controllers
 #= require_tree ./views
 
+$.fn.person = ->
+  elementID   = $(@).data('id')
+  elementID or= $(@).parents('[data-id]').data('id')
+  App.Person.find(elementID)
+
 class App extends Spine.Controller
   constructor: ->
     super
