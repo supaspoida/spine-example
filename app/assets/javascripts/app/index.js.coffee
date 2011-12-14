@@ -1,3 +1,4 @@
+#= require hamlcoffee
 #= require json2
 #= require spine
 #= require spine/manager
