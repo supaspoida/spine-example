@@ -3,6 +3,10 @@ class Follow
 
   attr_accessor :id, :name
 
+  def self.destroy_all
+    all.map &:destroy
+  end
+
   def self.people
     all.map { |f| Person.new(name: f.name) }
   end
