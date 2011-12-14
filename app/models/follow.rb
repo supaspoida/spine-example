@@ -1,7 +1,7 @@
 class Follow
   include Informal::Model
 
-  attr_accessor :id
+  attr_accessor :id, :name
 
   def self.people
     all.map { |f| Person.new(name: f.name) }
@@ -13,21 +13,29 @@ class Follow
     end
   end
 
+  def as_json(*args)
+    { id: name, name: name }
+  end
+
   def destroy
-    Persistence::Redis::Follow.destroy(id)
+    Persistence::Redis::Follow.destroy(name)
+  end
+
+  def name
+    @name || id
   end
 
   def to_param
-    id
+    name
   end
 
   def save
-    Persistence::Redis::Follow.create(id)
+    Persistence::Redis::Follow.create(name)
     valid?
   end
 
   def persisted?
-    id.present? && Persistence::Redis::Follow.exists?(id)
+    name.present? && Persistence::Redis::Follow.exists?(name)
   end
 
 end
