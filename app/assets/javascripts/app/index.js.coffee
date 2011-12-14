@@ -16,6 +16,7 @@ class App extends Spine.Controller
     super
 
     @people = new App.People
+    @follows = new App.Follows
 
     Spine.Route.setup()
 
