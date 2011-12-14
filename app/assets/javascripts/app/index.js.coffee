@@ -15,8 +15,8 @@ class App extends Spine.Controller
   constructor: ->
     super
 
-    @people = new App.People
-    @follows = new App.Follows
+    @people = new App.People el: 'ul#people'
+    @follows = new App.Follows el: 'ul#follows'
 
     Spine.Route.setup()
 

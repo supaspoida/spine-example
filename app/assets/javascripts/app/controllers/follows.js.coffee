@@ -1,9 +1,6 @@
 Follow = App.Follow
 
 class App.Follows extends Spine.Controller
-  tag: 'ul'
-  el: '#follows'
-
   constructor: ->
     super
     Follow.bind 'refresh change', @render
