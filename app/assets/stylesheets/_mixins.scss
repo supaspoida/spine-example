@@ -1,0 +1,74 @@
+@function compact($var-1,        $var-2: false,
+                  $var-3: false, $var-4: false,
+                  $var-5: false, $var-6: false,
+                  $var-7: false, $var-8: false,
+                  $var-9: false, $var-10: false) {
+  $full: $var-1;
+  $vars: $var-2, $var-3, $var-4, $var-5,
+         $var-6, $var-7, $var-8, $var-9, $var-10;
+
+  @each $var in $vars {
+    @if $var {
+      $full: $full, $var;
+    }
+  }
+  @return $full;
+}
+
+// Requires Sass 3.1+
+@mixin linear-gradient($pos, $G1, $G2: false,
+                       $G3: false, $G4: false,
+                       $G5: false, $G6: false,
+                       $G7: false, $G8: false,
+                       $G9: false, $G10: false) {
+  // Detect what type of value exists in $pos
+  $pos-type: type-of(nth($pos, 1));
+
+  // If $pos is missing from mixin, reassign vars and add default position
+  @if $pos-type == color {
+    $G10: $G9; $G9: $G8; $G8: $G7; $G7: $G6; $G6: $G5;
+     $G5: $G4; $G4: $G3; $G3: $G2; $G2: $G1; $G1: $pos;
+    $pos: top; // Default position
+  }
+
+  $full: compact($G1, $G2, $G3, $G4, $G5, $G6, $G7, $G8, $G9, $G10);
+
+  background-color: nth($G1, 1);
+  background-image: -webkit-gradient(linear, left top, left bottom, from($G1), to($G2)); /* Saf4+, Chrome */
+  background-image: -webkit-linear-gradient($pos, $full);
+  background-image:    -moz-linear-gradient($pos, $full);
+  background-image:     -ms-linear-gradient($pos, $full);
+  background-image:      -o-linear-gradient($pos, $full);
+  background-image:         linear-gradient($pos, $full);
+}
+
+// Usage: Gradient position is optional, default is top. Position can be a degree. Color stops are optional as well.
+
+// @include linear-gradient(#1e5799, #2989d8);
+// @include linear-gradient(top, #1e5799 0%, #2989d8 50%);
+// @include linear-gradient(50deg, rgba(10, 10, 10, 0.5) 0%, #2989d8 50%, #207cca 51%, #7db9e8 100%);
+
+@mixin border-radius ($radii) {
+  -webkit-border-radius: $radii;
+     -moz-border-radius: $radii;
+      -ms-border-radius: $radii;
+       -o-border-radius: $radii;
+          border-radius: $radii;
+}
+
+// Box-Shadow Mixin Requires Sass v3.1.1+
+@mixin box-shadow ($shadow-1,
+  $shadow-2: false, $shadow-3: false,
+  $shadow-4: false, $shadow-5: false,
+  $shadow-6: false, $shadow-7: false,
+  $shadow-8: false, $shadow-9: false)
+  {
+    $full: compact($shadow-1, $shadow-2, $shadow-3, $shadow-4,
+                   $shadow-5, $shadow-6, $shadow-7, $shadow-8, $shadow-9);
+
+  -webkit-box-shadow: $full;
+     -moz-box-shadow: $full;
+      -ms-box-shadow: $full;
+       -o-box-shadow: $full;
+          box-shadow: $full;
+}

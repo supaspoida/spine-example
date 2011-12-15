@@ -1,0 +1,25 @@
+@import mixins
+
+=button
+  +linear-gradient(top, $rivers_coach, $paws)
+  border: 1px solid $paws
+  border-bottom: 1px solid $paw_prints
+  +border-radius(3px)
+  color: $rarely_loath
+  font: bold 15px "Helvetica", "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Geneva, Verdana, sans-serif
+  line-height: 1
+  padding: 8px 0
+  text-align: center
+  text-shadow: 1px 1px 1px $rivers_coach
+  width: 150px
+  &:hover
+    +linear-gradient(top, #dddddd, #bbbbbb)
+    border: 1px solid #bbb
+    border-bottom: 1px solid #999
+    cursor: pointer
+    text-shadow: 0 1px 0 #ddd
+  &:active
+    border: 1px solid #aaa
+    border-bottom: 1px solid #888
+    +box-shadow(inset 0 0 5px 2px #aaaaaa, 0 1px 0 0 #eeeeee)
+
