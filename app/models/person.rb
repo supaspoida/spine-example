@@ -4,9 +4,14 @@ class Person
   attr_accessor :name
 
   PEOPLE = [
-    { name: 'Lar'    },
-    { name: 'Dave'   },
-    { name: 'Robert' },
+    { name: 'Lar'     },
+    { name: 'Dave'    },
+    { name: 'Robert'  },
+    { name: 'Marian'  },
+    { name: 'Stephen' },
+    { name: 'Ro'      },
+    { name: 'Micah'   },
+    { name: 'Shay'    },
   ]
 
   def self.all
