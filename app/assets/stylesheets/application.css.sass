@@ -4,10 +4,55 @@
 // = require_self
 // = require_tree .
 
+@import url(http://fonts.googleapis.com/css?family=Amaranth:700italic,700|Alice)
+
+$paw_prints: #3c3944
+$paws: #22545f
+$lantern: #dd052e
+$rarely_loath: #0e4951
+$rivers_coach: #809ca0
+
+body
+  background-color: $paws
+  font-family: 'Alice', serif
+  margin: 20px 0
+
+h1
+  font-family: 'Amaranth', sans-serif
+  font-weight: 700
+  color: $rarely_loath
+  font-size: 2em
+  text-align: center
+  background-color: $rivers_coach
+  margin: 0 20px
+  padding: 15px 0 15px
+
+a
+  text-decoration: none
+  color: $paw_prints
+
+ul
+  list-style-type: none
+  background-color: $rivers_coach
+  margin: 0 20px
+  padding: 0 0 20px 0
+  li
+    width: 230px
+    margin: 0 auto 10px
+    font-size: 1.4em
+    line-height: 34px
+    a
+      float: right
+
 #stage
+  position: relative
   width: 960px
   margin: 0 auto
-  font-family: Helvetica
+  overflow: auto
+
+section
+  width: 50%
+  float: left
 
 .follow
   a[data-type='follow']
